@@ -44,7 +44,7 @@ class LoginController extends Controller
     // Google login
     public function redirectToGoogle(Request $request)
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('google')->stateless()->redirect();
     }
     public function handleGoogleCallback()
     {
