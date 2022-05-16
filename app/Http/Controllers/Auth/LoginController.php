@@ -44,11 +44,11 @@ class LoginController extends Controller
     // Google login
     public function redirectToGoogle(Request $request)
     {
-        return Socialite::driver('google')->stateless()->redirect();
+        return Socialite::driver('google')->redirect();
     }
     public function handleGoogleCallback()
     {
-        $userdata = Socialite::driver('google')->stateless()->user();
+        $userdata = Socialite::driver('google')->user();
         dd($userdata);
 //        $user = User::updateOrCreate([
 //            'id' => $userdata->id,
