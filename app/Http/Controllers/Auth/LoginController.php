@@ -48,7 +48,7 @@ class LoginController extends Controller
     }
     public function handleGoogleCallback()
     {
-        $userdata = Socialite::driver('google')->user();
+        $userdata = Socialite::driver('google')->stateless()->user();
         dd($userdata);
 //        $user = User::updateOrCreate([
 //            'id' => $userdata->id,
